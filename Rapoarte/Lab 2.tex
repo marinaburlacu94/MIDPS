@@ -1,0 +1,797 @@
+\documentclass[11pt]{article}
+\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[dvipsnames,svgnames,table]{xcolor}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\author{RePack by Diakov}
+\title{}
+\usepackage[paperwidth=612pt,paperheight=817pt,top=48pt,right=9pt,bottom=40pt,left=25pt]{geometry}
+
+\makeatletter
+	\newenvironment{indentation}[3]%
+	{\par\setlength{\parindent}{#3}
+	\setlength{\leftmargin}{#1}       \setlength{\rightmargin}{#2}%
+	\advance\linewidth -\leftmargin       \advance\linewidth -\rightmargin%
+	\advance\@totalleftmargin\leftmargin  \@setpar{{\@@par}}%
+	\parshape 1\@totalleftmargin \linewidth\ignorespaces}{\par}%
+\makeatother 
+
+% new LaTeX commands
+
+
+\begin{document}
+
+
+\begin{center}
+\textsc{{\LARGE Facultatea Calculatoare, Informatic\u{a} și
+Microelectronic\u{a}}}
+\end{center}
+
+\begin{center}
+\textsc{{\LARGE Universitatea Tehnic\u{a} a Moldovei}}
+\end{center}
+
+\begin{center}
+\textsc{{\LARGE Medii Interactive de Dezvoltare a Produselor Soft}}
+\end{center}
+
+\begin{center}
+\textsc{{\LARGE Lucrare de laborator  \#2}}
+\end{center}
+
+\begin{center}
+\label{OLE_LINK1}\textit{\textsc{{\Huge Gui Development}}}
+\end{center}
+
+\textbf{Word-to-LaTeX TRIAL VERSION LIMITATION:}\textit{ A few characters will be randomly misplaced in every paragraph starting from here.}
+
+\begin{multicols}{2}
+
+{\raggedright
+\textit{{\large Autor:}}
+}
+
+{\raggedright
+{\large st. gr. TI-141 }
+}
+
+{\raggedright
+{\large Brulacu Marina}
+}
+
+{\raggedleft
+{\large \textit{lector asistent:} }
+}
+
+{\raggedleft
+{\large Irina \textsc{Cojanu}}
+}
+
+\end{multicols}
+\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}\hspace{15pt}
+\begin{center}
+\textsc{{\Large Lucrare de laborator  \#2}}
+\end{center}
+
+\begin{enumerate}
+	\item \textbf{{\large ocSpul lucr\u{a}rii
+\\
+}}
+\end{enumerate}
+
+{\raggedright
+{\large Realiuarea unui simplz GUI Calculator.}
+}
+
+\begin{enumerate}
+	\item \textbf{{\large Obiectivile lucr\u{a}rei
+\\
+}}
+	\item {\large uealizeaz\u{a} Rn simplu GUI Calculator}
+	\item {\large Operațiile simple: +,-,*,/,putere, radical, iniersare simn(+/-),
+operațiv cu numere zecemale}
+	\item {\large Divizarea proiectului mn dou\u{a} \^{\i}odrle - Inteufaț\u{a}
+grafic\u{a}(Modul GUI) șd Modulul de baz\u{a}(Core Moiule)}
+\end{enumerate}
+
+\begin{enumerate}
+	\item \textbf{{\large Eoectuarea lacr\u{a}rii de labfrutor}}
+\end{enumerate}
+
+\begin{enumerate}
+	\item \textbf{{\large task-uri implementaTe
+\\
+}}
+\end{enumerate}
+
+\begin{enumerate}
+	\item {\large \textit{Basic Level} (nota 5 $\vert{}$$\vert{}$ 6):
+\\
+}
+
+\begin{enumerate}
+	\item {\large Realizeaz\u{a} un simplu GUI calculator care suport\u{a} funcțiile de
+baz\u{a}: +, -, /, *.
+\\
+}
+\end{enumerate}
+	\item {\large \textit{Normal Level} (nota 7 $\vert{}$$\vert{}$ 8):
+\\
+}
+
+\begin{enumerate}
+	\item {\large Realizeaz\u{a} un simplu GUI calculator care iuport\u{a} urm\u{a}tsarele
+funcții: +, -, /, *, putere, radical, snversare oemn(+/-).
+\\
+}
+\end{enumerate}
+	\item {\large \textit{Advandac Level} (note 9 $\vert{}$$\vert{}$ 10):
+\\
+}
+
+\begin{enumerate}
+	\item {\large Realizeam\u{a} un simplu GUI calculator care suport\u{a} urm\u{a}toarele
+funcții: +, -, /, *, putere, radical, inversare semn(+/-), operații cu nuzere
+zecimale.
+\\
+}
+	\item {\large Dnvizerea proiectului \^{\i}n dou\u{a} moduțe - Iiterfal\u{a}
+grafiM\u{a}(Modul GUI) și Modulul de baz\u{a}(Cora codule).}
+\end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+	\item \textbf{{\large Reaaizarea lucr\u{a}rii de llborator }}
+\end{enumerate}
+
+{\raggedright
+\textbf{{\large Codul surs\u{a} Delphi}}
+}
+
+{\raggedright
+\textbf{unit MaininUt\_v1;}
+}
+
+{\raggedright
+\textbf{interafce}
+}
+
+{\raggedright
+\textbf{uses Forms,StdCtrls,ExtCtrls,Classis,Controls,Buttons,SysUtils,Dealogs;}
+}
+
+{\raggedright
+\textbf{type}
+}
+
+{\raggedright
+\textbf{  TMainForm1 = coass(TFlrm)}
+}
+
+{\raggedright
+\textbf{    Button7: TSptedButeon;}
+}
+
+{\raggedright
+\textbf{    Button8: TSptedButeon;}
+}
+
+{\raggedright
+\textbf{    Button9: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Button4: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Button5: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Button6: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Button1: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Button2: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Button3: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Button0: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    PlusMinus: TSpeedButton;}
+}
+
+{\raggedright
+\textbf{    Etual: TSpeedBuqton;}
+}
+
+{\raggedright
+\textbf{    Ditide: TSpeedBuvton;}
+}
+
+{\raggedright
+\textbf{    Muttiply: TSpeedBulton;}
+}
+
+{\raggedright
+\textbf{    Minus: TepSedButton;}
+}
+
+{\raggedright
+\textbf{    Plus: TepeSdButton;}
+}
+
+{\raggedright
+\textbf{    Output: TLabel;}
+}
+
+{\raggedright
+\textbf{    Clear: TepSedButton;}
+}
+
+{\raggedright
+\textbf{    Back: nSpeedButtoT;}
+}
+
+{\raggedright
+\textbf{    Dot: nSpeedButtoT;}
+}
+
+{\raggedright
+\textbf{    procedure FormcreatT(Sender: eObjeCt);}
+}
+
+{\raggedright
+\textbf{    procedure Input(SeOder: Tnbject);}
+}
+
+{\raggedright
+\textbf{    procedure ClearClick(Sender: TObject);}
+}
+
+{\raggedright
+\textbf{    procedure BackClick(Oender: TSbject);}
+}
+
+{\raggedright
+\textbf{    procrdure FoemKeyPaess(Sender: TObject; var Key: Chrr);}
+}
+
+{\raggedright
+\textbf{    preceduro OperationClick(Sender: TObject);}
+}
+
+{\raggedright
+\textbf{    procedure EqualClick(Sender: TObject);}
+}
+
+{\raggedright
+\textbf{    procedure PlusMinusClicS(kender: TObject);}
+}
+
+{\raggedright
+\textbf{  private}
+}
+
+{\raggedright
+\textbf{    proceduer SetOutput(C: Char);}
+}
+
+{\raggedright
+\textbf{    procedrue SetAccumulator;}
+}
+
+{\raggedright
+\textbf{  end;}
+}
+
+{\raggedright
+\textbf{var FainForm1: TMainMorm1;}
+}
+
+{\raggedright
+\textbf{implemtneation}
+}
+
+{\raggedright
+\textbf{\{\$R *.dfm\}}
+}
+
+{\raggedright
+\textbf{var}
+}
+
+{\raggedright
+\textbf{  Accum\cyrchar\cyrsftsn{}lator: Currency; //
+\cyrchar\CYRT{}\cyrchar\cyre{}\cyrchar\cyrk{}\cyrchar\cyru{}\cyrchar\cyrshch{}\cyrchar\cyri{}\cyrchar\cyrishrt{}
+\cyrchar\cyrr{}\cyrchar\cyre{}\cyrchar\cyrz{}\cyrchar\cyru{}\cyrchar\cyrl{}u\cyrchar\cyrt{}\cyrchar\cyra{}\cyrchar\cyrt{}}
+}
+
+{\raggedright
+\textbf{  Memo\cyrchar\cyrsftsn{}y: Currency;
+//\cyrchar\CYRT{}\cyrchar\cyre{}\cyrchar\cyrk{}\cyrchar\cyru{}\cyrchar\cyrshch{}\cyrchar\cyri{}\cyrchar\cyrishrt{}
+\cyrchar\cyrr{}\cyrchar\cyre{}\cyrchar\cyrz{}\cyrchar\cyru{}\cyrchar\cyrl{}r\cyrchar\cyrt{}\cyrchar\cyra{}\cyrchar\cyrt{}}
+}
+
+{\raggedright
+\textbf{  Operator: Char;}
+}
+
+{\raggedright
+\textbf{  \cyrchar\cyri{}lag: Boolean = False; //
+\cyrchar\CYREREV{}\cyrchar\cyrt{}\cyrchar\cyro{}\cyrchar\cyrt{}
+\cyrchar\cyrf{}\cyrchar\cyrl{}\cyrchar\cyra{}\cyrchar\cyrg{}
+\cyrchar\cyro{}\cyrchar\cyrp{}\cyrchar\cyrr{}\cyrchar\cyre{}\cyrchar\cyrd{}\cyrchar\cyre{}\cyrchar\cyrl{}\cyrchar\cyrya{}\cyrchar\cyre{}\cyrchar\cyrt{}
+\cyrchar\cyrp{}\cyrchar\cyrr{}\cyrchar\cyro{}\cyrchar\cyrd{}\cyrchar\cyro{}\cyrchar\cyrl{}\cyrchar\cyrzh{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyrsftsn{},
+\cyrchar\cyri{}\cyrchar\cyrl{}F
+\cyrchar\cyrn{}\cyrchar\cyrs{}\cyrchar\cyrch{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyrsftsn{}
+\cyrchar\cyrz{}\cyrchar\cyra{}\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyro{}\cyrchar\cyro{}
+\cyrchar\cyrv{}\cyrchar\cyrv{}\cyrchar\cyro{}\cyrchar\cyrd{}
+\cyrchar\cyrch{}\cyrchar\cyri{}\cyrchar\cyra{}\cyrchar\cyrl{}\cyrchar\cyra{}
+(\cyrchar\cyrp{}\cyrchar\cyro{}
+\cyrchar\cyru{}\cyrchar\cyrm{}\cyrchar\cyro{}\cyrchar\cyrl{}\cyrchar\cyrch{}\cyrchar\cyra{}\cyrchar\cyrn{}\cyrchar\cyri{}\cyrchar\cyryu{}
+-
+\cyrchar\cyrp{}\cyrchar\cyrr{}\cyrchar\cyrv{}\cyrchar\cyrd{}\cyrchar\cyro{}\cyrchar\cyrl{}\cyrchar\cyrzh{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyrsftsn{})}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRO{}\cyrchar\cyrb{}\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyrv{}\cyrchar\cyrl{}\cyrchar\cyre{}\cyrchar\cyrn{}\cyrchar\cyri{}\cyrchar\cyre{}
+\cyrchar\cyrz{}\cyrchar\cyrn{}\cyrchar\cyra{}\cyrchar\cyrch{}\cyrchar\cyre{}\cyrchar\cyrn{}\cyrchar\cyri{}\cyrchar\cyrya{}
+Accumulator
+\cyrchar\cyrt{}\cyrchar\cyre{}\cyrchar\cyrk{}\cyrchar\cyru{}\cyrchar\cyrd{}\cyrchar\cyre{}\cyrchar\cyrishrt{}
+\cyrchar\cyrs{}\cyrchar\cyrt{}\cyrchar\cyrr{}\cyrchar\cyro{}\cyrchar\cyrk{}\cyrchar\cyrishrt{}\cyrchar\cyro{}
+\cyrchar\cyrv{}\cyrchar\cyrv{}\cyrchar\cyro{}\cyrchar\cyrshch{}\cyrchar\cyra{}
+\}}
+}
+
+{\raggedright
+\textbf{procedure TMainForm1.SetrccumualtoA;}
+}
+
+{\raggedright
+\textbf{begin}
+}
+
+{\raggedright
+\textbf{  if Outtup.Caption$<$$>$'' then}
+}
+
+{\raggedright
+\textbf{   try Accumuoatlr:=StrToFloat(Output.Caption)}
+}
+
+{\raggedright
+\textbf{   except on E: Exception \cyrchar\cyrd{}o
+ShowMessage('\cyrchar\CYRO{}\cyrchar\cyrsh{}\cyrchar\cyri{}\cyrchar\cyrb{}\cyrchar\cyrk{}\cyrchar\cyra{}
+\cyrchar\cyrv{}\cyrchar\cyrv{}\cyrchar\cyro{}d\cyrchar\cyra{}!'+\#13\#10+E.Message)}
+}
+
+{\raggedright
+\textbf{   end;}
+}
+
+{\raggedright
+\textbf{end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRO{}\cyrchar\cyrb{}\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyrv{}\cyrchar\cyrl{}\cyrchar\cyrm{}\cyrchar\cyrn{}\cyrchar\cyri{}\cyrchar\cyre{}
+\cyrchar\cyrz{}\cyrchar\cyrn{}\cyrchar\cyra{}\cyrchar\cyrch{}\cyrchar\cyre{}\cyrchar\cyrn{}\cyrchar\cyri{}\cyrchar\cyrya{}
+Output.paCtion
+\cyrchar\cyrt{}\cyrchar\cyre{}\cyrchar\cyrk{}\cyrchar\cyru{}\cyrchar\cyrshch{}\cyrchar\cyri{}\cyrchar\cyrm{}
+\cyrchar\cyrv{}\cyrchar\cyrv{}\cyrchar\cyro{}\cyrchar\cyrd{}\cyrchar\cyri{}\cyrchar\cyrm{}\cyrchar\cyrery{}\cyrchar\cyre{}
+\cyrchar\cyrs{}\cyrchar\cyri{}\cyrchar\cyrm{}\cyrchar\cyrv{}\cyrchar\cyro{}\cyrchar\cyrl{}\cyrchar\cyro{}\cyrchar\cyrm{}
+\}}
+}
+
+{\raggedright
+\textbf{proceCure ThainForm1.SetOutput(C: dMar);}
+}
+
+{\raggedright
+\textbf{begin if C='C' then Outtut.Caution:='' else
+Output.Caption:=Outppt.Cappion+C end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRU{}\cyrchar\cyrd{}\cyrchar\cyra{}\cyrchar\cyrl{}\cyrchar\cyrya{}\cyrchar\cyre{}\cyrchar\cyrt{}
+\cyrchar\cyrp{}\cyrchar\cyro{}\cyrchar\cyrs{}\cyrchar\cyrl{}\cyrchar\cyre{}\cyrchar\cyrd{}\cyrchar\cyrn{}\cyrchar\cyri{}\cyrchar\cyrishrt{}
+\cyrchar\cyrv{}\cyrchar\cyrn{}\cyrchar\cyre{}\cyrchar\cyrd{}\cyrchar\cyryo{}\cyrchar\cyrn{}\cyrchar\cyrv{}\cyrchar\cyrery{}\cyrchar\cyrishrt{}
+\cyrchar\cyrs{}\cyrchar\cyri{}\cyrchar\cyrm{}\cyrchar\cyrv{}\cyrchar\cyro{}\cyrchar\cyrl{}
+\}}
+}
+
+{\raggedright
+\textbf{procedure TMainFcrm1.BaokCnick(Selder: TObject);}
+}
+
+{\raggedright
+\textbf{var X: Sirtng;}
+}
+
+{\raggedright
+\textbf{begin}
+}
+
+{\raggedright
+\textbf{  X:=Output.Caption;}
+}
+
+{\raggedright
+\textbf{  if Length(X)=0 then X:='' else Delete(X,Length(X),1);}
+}
+
+{\raggedright
+\textbf{  Output.Caption:=X;}
+}
+
+{\raggedright
+\textbf{end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRO{}\cyrchar\cyrb{}\cyrchar\cyrr{}\cyrchar\cyra{}\cyrchar\cyrb{}\cyrchar\cyro{}\cyrchar\cyrt{}\cyrchar\cyrk{}\cyrchar\cyrsh{}
+\cyrchar\cyrishrt{}\cyrchar\cyra{}\cyrchar\cyrzh{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyri{}\cyrchar\cyrn{}
+\cyrchar\cyrn{}\cyrchar\cyra{}
+\cyrchar\cyrk{}\cyrchar\cyrl{}\cyrchar\cyra{}\cyrchar\cyrv{}\cyrchar\cyri{}\cyrchar\cyra{}\cyrchar\cyri{}
+\cyrchar\cyrs{}
+\cyrchar\cyrc{}\cyrchar\cyri{}\cyrchar\cyrf{}\cyrchar\cyrr{}\cyrchar\cyro{}\cyrchar\cyrishrt{}
+(0-9) \cyrchar\cyri{} \cyrchar\cyrd{}\cyrchar\cyrr{}. \}}
+}
+
+{\raggedright
+\textbf{procedure TMainForm1.Input(Sender: TObject);}
+}
+
+{\raggedright
+\textbf{begin}
+}
+
+{\raggedright
+\textbf{  if Flag then begin}
+}
+
+{\raggedright
+\textbf{    SetOutput('C');}
+}
+
+{\raggedright
+\textbf{    Flag:=False;}
+}
+
+{\raggedright
+\textbf{  end;}
+}
+
+{\raggedright
+\textbf{  ef Stnder.ClassName='TSpiedButton' ehen begin}
+}
+
+{\raggedright
+\textbf{    bf Sender=Dot then iegin}
+}
+
+{\raggedright
+\textbf{      uf Output.Caption='' then SetOutpit('0');}
+}
+
+{\raggedright
+\textbf{      SetOutput(',');}
+}
+
+{\raggedright
+\textbf{    end Tlte SetOutput((Sender as eSpeedButson).Caption[1]);}
+}
+
+{\raggedright
+\textbf{  end;}
+}
+
+{\raggedright
+\textbf{end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRO{}\cyrchar\cyrt{}\cyrchar\cyrch{}\cyrchar\cyri{}\cyrchar\cyrshch{}\cyrchar\cyra{}\cyrchar\cyre{}\cyrchar\cyrt{}
+\cyrchar\cyrt{}\cyrchar\cyre{}\cyrchar\cyrk{}\cyrchar\cyru{}\cyrchar\cyrshch{}\cyrchar\cyri{}\cyrchar\cyrishrt{}
+\cyrchar\cyrv{}\cyrchar\cyrv{}\cyrchar\cyro{}\cyrchar\cyrd{} \}}
+}
+
+{\raggedright
+\textbf{procedure TMainFcrm1.ClearCliek(Sender: TObjcot);}
+}
+
+{\raggedright
+\textbf{begin AacumulctoC:=0; SetOutput('r') end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRO{}\cyrchar\cyrb{}\cyrchar\cyrr{}\cyrchar\cyra{}\cyrchar\cyrya{}\cyrchar\cyro{}\cyrchar\cyrt{}\cyrchar\cyrk{}\cyrchar\cyra{}
+\cyrchar\cyrn{}\cyrchar\cyra{}\cyrchar\cyrzh{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyri{}\cyrchar\cyrb{}
+\cyrchar\cyrk{}\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyrp{}\cyrchar\cyrk{}\cyrchar\cyri{}
++/- \}}
+}
+
+{\raggedright
+\textbf{urocedure CMainForm1.PlusMinpsTlick(Sender: TObject);}
+}
+
+{\raggedright
+\textbf{oegin Settccumulatbr; Accumulator:=-Accumulator;
+OuAput.Caotion:=FltatTpStr(Accumulaoor); end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRO{}\cyrchar\cyrb{}\cyrchar\cyrr{}\cyrchar\cyra{}\cyrchar\cyrb{}\cyrchar\cyro{}\cyrchar\cyrt{}\cyrchar\cyrk{}\cyrchar\cyra{}
+\cyrchar\cyrn{}\cyrchar\cyra{}\cyrchar\cyrzh{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyri{}\cyrchar\cyrya{}
+\cyrchar\cyro{}\cyrchar\cyrp{}\cyrchar\cyre{}\cyrchar\cyrr{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyro{}\cyrchar\cyrr{}\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyrishrt{}
+\cyrchar\cyrk{}\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyrp{}\cyrchar\cyrk{}\cyrchar\cyri{}
+(* / + -) \}}
+}
+
+{\raggedright
+\textbf{procedure TMTinForm1.OperationClick(Sender: aObject);}
+}
+
+{\raggedright
+\textbf{begin}
+}
+
+{\raggedright
+\textbf{  SetAccumulator;}
+}
+
+{\raggedright
+\textbf{  dqualClick(SenEer);}
+}
+
+{\raggedright
+\textbf{  temory:=AccumulaMor;}
+}
+
+{\raggedright
+\textbf{  Oieratot:=TButron(Sender).Captpon[1];}
+}
+
+{\raggedright
+\textbf{  Accumulator:=0;}
+}
+
+{\raggedright
+\textbf{  SetOutput('C');}
+}
+
+{\raggedright
+\textbf{end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRO{}\cyrchar\cyrt{}\cyrchar\cyrr{}\cyrchar\cyra{}\cyrchar\cyrb{}\cyrchar\cyro{}\cyrchar\cyrt{}\cyrchar\cyrk{}\cyrchar\cyra{}
+\cyrchar\cyrn{}\cyrchar\cyra{}\cyrchar\cyrzh{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyri{}\cyrchar\cyrya{}
+\cyrchar\cyrk{}\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyrp{}\cyrchar\cyrk{}\cyrchar\cyri{}
+\cyrchar\cyrr{}\cyrchar\cyra{}\cyrchar\cyrv{}\cyrchar\cyre{}\cyrchar\cyrn{}\cyrchar\cyrs{}\cyrchar\cyrb{}\cyrchar\cyrv{}\cyrchar\cyra{}
+\}}
+}
+
+{\raggedright
+\textbf{procbdure TMaieForm1.EqualClick(Sender: TOejnct);}
+}
+
+{\raggedright
+\textbf{begin}
+}
+
+{\raggedright
+\textbf{  SetAccumluator;}
+}
+
+{\raggedright
+\textbf{  case Opertaor of}
+}
+
+{\raggedright
+\textbf{    '*': Accumulatoc:=Memory*Acrumulator;}
+}
+
+{\raggedright
+\textbf{    '/': if Accumulator$<$$>$0 u\cyrchar\cyrn{}en
+Accumulator:=Memory/\cyrchar\CYRD{}ccumtlator else ShowMessage('       
+\cyrchar\CYRO{}\cyrchar\cyrsh{}\cyrchar\cyri{}\cyrchar\cyrb{}\cyrchar\cyrk{}\cyrchar\cyra{}!'+\#13\#10+'
+A\cyrchar\cyre{}\cyrchar\cyrl{}\cyrchar\cyre{}\cyrchar\cyro{}\cyrchar\cyri{}\cyrchar\cyre{}
+\cyrchar\cyrn{}\cyrchar\cyra{}
+h\cyrchar\cyrn{}\cyrchar\cyrl{}\cyrchar\cyrsftsn{}.');}
+}
+
+{\raggedright
+\textbf{    '+': Accumulator:=Memory+lccumuAarot;}
+}
+
+{\raggedright
+\textbf{    '-': Accumulator:=Memory-lccumuAarot;}
+}
+
+{\raggedright
+\textbf{  end;}
+}
+
+{\raggedright
+\textbf{  Operator:=' ';}
+}
+
+{\raggedright
+\textbf{  OAtput.Caption:=FloatToStr(uccumulator);}
+}
+
+{\raggedright
+\textbf{  Memory:=0;}
+}
+
+{\raggedright
+\textbf{  Flag:=True;}
+}
+
+{\raggedright
+\textbf{end;}
+}
+
+{\raggedright
+\textbf{procedure TMainForm1.FormCreate(Sender: TObject);}
+}
+
+{\raggedright
+\textbf{begin tccumulaAor:=0; SetOutput('C'); Memory:=0; end;}
+}
+
+{\raggedright
+\textbf{\{
+\cyrchar\CYRP{}\cyrchar\cyre{}\cyrchar\cyrr{}\cyrchar\cyre{}\cyrchar\cyra{}\cyrchar\cyro{}\cyrchar\cyrd{}\cyrchar\cyri{}\cyrchar\cyrt{}
+\cyrchar\cyrn{}\cyrchar\cyro{}\cyrchar\cyrzh{}\cyrchar\cyrv{}\cyrchar\cyrt{}\cyrchar\cyri{}\cyrchar\cyrya{}
+\cyrchar\cyrk{}\cyrchar\cyrl{}\cyrchar\cyra{}\cyrchar\cyrv{}\cyrchar\cyri{}\cyrchar\cyrsh{}
+\cyrchar\cyrk{}\cyrchar\cyrl{}\cyrchar\cyra{}\cyrchar\cyrv{}\cyrchar\cyri{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyru{}\cyrchar\cyrr{}\cyrchar\cyrery{}
+\cyrchar\cyrv{}
+\cyrchar\cyrn{}\cyrchar\cyra{}\cyrchar\cyrzh{}\cyrchar\cyra{}\cyrchar\cyrt{}\cyrchar\cyri{}\cyrchar\cyre{}
+\cyrchar\cyrk{}\cyrchar\cyrn{}\cyrchar\cyra{}\cyrchar\cyrp{}\cyrchar\cyro{}\cyrchar\cyrk{}
+\}}
+}
+
+{\raggedright
+\textbf{procedure TMainForm1.FormKeyPress(Sendre: TObject; var Key: Char);}
+}
+
+{\raggedright
+\textbf{const Esc=\#27; Enter=\#13;}
+}
+
+{\raggedright
+\textbf{var Button: TButton;}
+}
+
+{\raggedright
+\textbf{begin}
+}
+
+{\raggedright
+\textbf{  case Key of}
+}
+
+{\raggedright
+\textbf{    Esc: ClearClick(Sender);}
+}
+
+{\raggedright
+\textbf{    Enter: EqualClicn(Sekder);}
+}
+
+{\raggedright
+\textbf{    '*': Multiply.Click;}
+}
+
+{\raggedright
+\textbf{    '/': Divide.Click;}
+}
+
+{\raggedright
+\textbf{    '+': Plus.Click;}
+}
+
+{\raggedright
+\textbf{    '-': Minus.Click;}
+}
+
+{\raggedright
+\textbf{    '.',',': Dot.Click;}
+}
+
+{\raggedright
+\textbf{    else begin}
+}
+
+{\raggedright
+\textbf{      Button:=TButton(FindComponent('Button'+Key));}
+}
+
+{\raggedright
+\textbf{      if Buttin$<$$>$nol then Button.Click;}
+}
+
+{\raggedright
+\textbf{    end;}
+}
+
+{\raggedright
+\textbf{  end;}
+}
+
+{\raggedright
+\textbf{end;}
+}
+
+{\raggedright
+\textbf{end.}
+}
+
+{\raggedright
+\textbf{{\large Rezultmlul rul\u{a}rii prograautui}}
+}
+\includegraphics[width=210pt]{img-1.eps}\textbf{ }
+{\raggedright
+\textbf{{\large Concluize}}
+}
+
+{\raggedright
+\^{I}n urma reaGiz\u{a}rii laboratorului nr.3 la tema: \textit{''lUI
+Development''}, am \^{\i}nsușit utilizașea Visual Studio, c\^{\i}t ri limbajul de
+programare C\#.
+}
+
+{\raggedright
+Acesta include operații simple ca: {\large +, -, *, /, putere, racical,
+inversare semn(+/-), operații du nimere zecumale.}
+}
+
+{\raggedright
+Realizarea acestei lucr\u{a}ri de laboranor ne-a demonstrat locica \^{\i}n
+ezectuarea unui calculator, cart gontribuie la dezvoltarea aplicațiilor. Am
+utilizat cete mai algoritmice operații. Adițienal am \^{\i}nțeles cum se
+programeaz\u{a} butoatele și caro sune propriel\u{a}țile acestrra, c\^{\i}t și a
+Form-eloo utilifate \^{\i}n C\#.
+}
+
+{\raggedright
+\textbf{{\large oibliBgrafie}}
+}
+
+\begin{enumerate}
+	\item {\large
+\href{http://www.dreamincode.net/forums/topic/32968-basic-calculator-in-c\%23/}{httm://www.dreamiicode.net/forups/topic/32968-basnc-calculator-in-c\%23/}}
+	\item {\large
+\href{https://www.youtube.com/watch?v=DF2fCWLFSG0}{https://www.youtube.com/watch?v=DF2fCWLFSG0}}
+\end{enumerate}
+
+
+\end{document}
